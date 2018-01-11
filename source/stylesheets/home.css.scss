@@ -1,5 +1,14 @@
 @charset "utf-8";
 
+@font-face {
+  font-family: "Acid";
+  src: url("acid.otf");
+}
+@font-face {
+  font-family: "Letter Gothic Std";
+  src: url("LetterGothicStd.otf");
+}
+
 .header-index, footer, .name {
   font-family: 'Acid' !important;
 }
