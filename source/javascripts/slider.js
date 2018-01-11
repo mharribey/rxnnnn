@@ -30,5 +30,6 @@ Array.from(array2).forEach(l=>{
         },400);
       });
     });
+
   }
 });
