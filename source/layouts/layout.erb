@@ -43,11 +43,48 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= current_page.data.title || "Rxnnn - Hello world" %></title>
 
-    <%= stylesheet_link_tag "normalize", "all" %>
-    <%= javascript_include_tag  "all" %>
+    <%= stylesheet_link_tag "normalize", "home", "profile", "projects" %>
   </head>
 
   <body>
+    <% if current_page.path == "index.html" %>
+      <%= image_tag 'LOGO.png', class: "logo-index", alt: "rxnnn-logo" %>
+    <% else %>
+      <%= image_tag 'LOGO.png', class: "logo", alt: "rxnnn-logo" %>
+    <% end %>
+    <header class="header-index">
+      <div class="hello">
+        <p href="../index.html" id="hello">hello world</p>
+        <hr class="barre-header">
+      </div>
+      <div class="items">
+        <p href="../profile.html" id="profileBtn">profile</p>
+        <p href="../projects.html" id="projectsBtn">projects</p>
+      </div>
+    </header>
+
+    <div class="name">
+      <p>roxane dulhoste</p>
+    </div>
+
     <%= yield %>
+
+    <footer>
+      <div class="copy">
+        <a href="../index.html">copyright</a>
+        <hr class="barre-footer">
+      </div>
+      <div class="links">
+        <a href="../index.html">resume</a>
+        <a href="../index.html">linkedin</a>
+        <a href="../index.html">mail</a>
+      </div>
+    </footer>
+
+    <%= javascript_include_tag  "all" %>
+
+    <% if current_page.path != "index.html" %>
+      <%= javascript_include_tag "layout" %>
+    <% end %>
   </body>
 </html>
