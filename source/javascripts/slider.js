@@ -1,33 +1,34 @@
 
-var profileBtn = document.querySelector('#profileBtn');
-var projectsBtn = document.querySelector('#projectsBtn');
-var helloBtn = document.querySelector('#hello');
+var profile = document.querySelector('#profileBtn');
+var projects = document.querySelector('#projectsBtn');
+var index = document.querySelector('#hello');
 
+var projDiv = document.querySelector(".projects");
+var profDiv = document.querySelector(".profile");
+var helloDiv = document.querySelector(".index");
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('body').classList.add('is-ready');
-}, false);
+var array = [profile,projects,index];
+var arrayText = ["profile","projects","index"];
+var array2 = [projDiv, profDiv, helloDiv];
 
-profileBtn.addEventListener("click",function(){
-  document.querySelector('body').classList.add('remove');
-  window.location.href = '../profile.html';
-  setTimeout(function(){
-    document.querySelector('body').classList.remove('is-ready');
-  },1000);
-});
+Array.from(array2).forEach(l=>{
+  if(l){
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function(){
+        l.classList.add('is-ready');
+      },50);
+    }, false);
 
-projectsBtn.addEventListener("click",function(){
-  document.querySelector('body').classList.add('remove');
-  window.location.href = '../projects.html';
-  setTimeout(function(){
-    document.querySelector('body').classList.remove('is-ready');
-  },1000);
-});
-
-helloBtn.addEventListener("click",function(){
-  document.querySelector('body').classList.add('remove');
-  window.location.href = '../index.html';
-  setTimeout(function(){
-    document.querySelector('body').classList.remove('is-ready');
-  },1000);
+    Array.from(array).forEach(p=>{
+      p.addEventListener("click",function(){
+        l.classList.add('remove');
+        setTimeout(function(){
+          l.classList.remove('is-ready');
+        },1600);
+        setTimeout(function(){
+          window.location.href = '../'+arrayText[array.indexOf(p)]+'.html';
+        },400);
+      });
+    });
+  }
 });

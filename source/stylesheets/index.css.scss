@@ -1,0 +1,41 @@
+
+.index {
+  opacity: 0;
+  transform: translateX(-200px);
+}
+
+img {
+  width:56vw;
+  transform: translate(50% -50%);
+}
+
+.center {
+  .main-rox {
+    opacity: 1;
+    z-index: 9999;
+    box-shadow: 0 20px 40px rgba(0, 0 ,0 , .15);
+    transition: all ease .1s;
+  }
+  h1 {
+    color:#30DEB7;
+    position:absolute;
+    bottom:0;
+    right:15vw;
+  }
+}
+
+.left-rox {
+  top:-30px;
+  position: absolute;
+  left:30px;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.right-rox {
+  position: absolute;
+  right:30px;
+  bottom:-30px;
+  z-index: -2;
+  opacity: 0.3;
+}
