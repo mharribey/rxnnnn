@@ -48,21 +48,21 @@
 
 @media screen and (max-width:820px){
   .about img {
-    width:600px!important;
+    width:600px;
   }
   .about h1 {
-    top:-35px !important;
-    font-size: 27px !important;
+    top:-35px ;
+    font-size: 26px;
   }
-  .top,.bottom {
-    width:80%!important;
-    font-size: 0.7em !important;
-    margin-left: 10px !important;
+  .about-text .top, .about-text .bottom {
+    width:80%;
+    font-size: 0.7em;
+    margin-left: 10px;
   }
 }
 
 @media screen and (max-width:1150px){
-  .top, .bottom {
-    margin-left:5vw!important;
+  .about-text .top, .about-text .bottom {
+    margin-left:5vw;
   }
 }
