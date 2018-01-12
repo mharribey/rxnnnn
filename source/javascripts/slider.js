@@ -2,6 +2,7 @@
 var profile = document.querySelector('#profileBtn');
 var projects = document.querySelector('#projectsBtn');
 var index = document.querySelector('#hello');
+var logo = document.querySelector(".logo");
 
 var projDiv = document.querySelector(".projects");
 var profDiv = document.querySelector(".profile");
@@ -24,19 +25,25 @@ function load(){
     setInterval(function(){
       x+= 0.1;
       loading.style.width = x+"%";
-      console.log(x);
     },temps);
   }
 }
 
 function change(item,indexArray){
   item.classList.add('remove');
+  if(logo != null){
+    logo.classList.add('remove');
+  }
   setTimeout(function(){
     item.classList.remove('is-ready');
+    if(logo != null){
+      logo.classList.remove('is-ready');
+    }
   },1600);
   setTimeout(function(){
     window.location.href = '../'+arrayText[array.indexOf(indexArray)]+'.html';
   },400);
+
 }
 
 Array.from(array2).forEach(l=>{
@@ -46,6 +53,9 @@ Array.from(array2).forEach(l=>{
 
       setTimeout(function(){
         l.classList.add('is-ready');
+        if(logo != null){
+          logo.classList.add('is-ready');
+        }
       },50);
     });
 
@@ -73,7 +83,6 @@ Array.from(array2).forEach(l=>{
 
     Array.from(array).forEach(p=>{
       p.addEventListener("click",function(){
-        console.log(p);
         change(l,p);
       });
     });

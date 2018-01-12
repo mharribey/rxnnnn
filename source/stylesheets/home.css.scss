@@ -18,7 +18,7 @@
 }
 
 #loading {
-  width:0.1%;
+  width:0%;
   height:4px;
   position: absolute;
   background-color: white;
@@ -37,7 +37,7 @@ body {
 .is-ready{
     opacity: 1 !important;
     transform: translateX(0) !important;
-    transition-duration: 1s;
+    transition-duration: 0.7s;
 }
 .remove {
   opacity: 0 !important;
@@ -47,15 +47,17 @@ body {
 
 a,p {
   color:white;
-  border-bottom:2px solid transparent;
-  transition: 0.2s ease-in;
   padding:2px 2px;
   cursor: pointer;
   text-decoration: none;
+}
 
-  &:hover {
-    border-bottom: 2px solid #30DEB7;
-  }
+.bouton {
+  border-bottom:2px solid transparent;
+  transition: 0.2s ease-in;
+}
+.bouton:hover{
+  border-bottom:2px solid #30DEB7;
 }
 
 .header-index {
@@ -77,6 +79,10 @@ a,p {
     display: flex;
     justify-content: space-around;
   }
+}
+
+.footer-index {
+  margin-top:1.3em;
 }
 
 footer {
@@ -112,6 +118,8 @@ footer {
   border:0 !important;
   margin:0;
   cursor: pointer;
+  opacity: 0;
+  transform: translateX(-200px);
 }
 
 .logo-index {

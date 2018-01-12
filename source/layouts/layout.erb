@@ -60,8 +60,8 @@
         <hr class="barre-header">
       </div>
       <div class="items">
-        <p href="../profile.html" id="profileBtn">profile</p>
-        <p href="../projects.html" id="projectsBtn">projects</p>
+        <p href="../profile.html" class="bouton" id="profileBtn">profile</p>
+        <p href="../projects.html" class="bouton" id="projectsBtn">projects</p>
       </div>
     </header>
 
@@ -71,7 +71,11 @@
 
     <%= yield %>
 
+    <% if current_page.path == "index.html" %>
+    <footer class="footer-index">
+    <% else %>
     <footer>
+    <% end %>
       <div class="copy">
         <a href="../index.html">copyright</a>
         <hr class="barre-footer">
@@ -88,5 +92,24 @@
     <% if current_page.path != "index.html" %>
       <%= javascript_include_tag "layout" %>
     <% end %>
+
+    <div class="hidden">
+      <script type="text/javascript">
+        <!--//--><![CDATA[//><!--
+          var images = [];
+          function preload() {
+            for (i = 0; i < preload.arguments.length; i++) {
+              images[i] = new Image()
+              images[i].src = preload.arguments[i]
+            }
+          }
+          preload(
+            "../images/rox1.jpg",
+            "../images/rox2.jpg"
+          )
+        //--><!]]>
+      </script>
+    </div>
+
   </body>
 </html>
