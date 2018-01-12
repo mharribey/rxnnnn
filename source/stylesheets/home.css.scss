@@ -150,8 +150,8 @@ footer {
   .name {
     display: none !important;
   }
-  body {
-    overflow: hidden !important;
+  html {
+    overflow: hidden;
   }
   footer {
     margin-top: 3em !important;
