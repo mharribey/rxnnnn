@@ -13,17 +13,20 @@ var array2 = [projDiv, profDiv, helloDiv];
 
 var loading = document.querySelector("#loading");
 
-// CHANGE LA VARIABLE POUR VARIER LE TEMPS POUR LE CHANGEMENT AUTO DES PAGES (en s)
 
-var temps = 8; //soit 8 secones
+// CHANGE LA VARIABLE POUR VARIER LE TEMPS POUR LE CHANGEMENT AUTO DES PAGES (en s)
+var temps = 8; //soit 8 secondes
+var bool = false; //turn true/false to enable/disable
 
 function load(){
+  if(bool){
     var x = 0;
-  setInterval(function(){
-    x+= 0.1;
-    loading.style.width = x+"%";
-    console.log(x);
-  },temps);
+    setInterval(function(){
+      x+= 0.1;
+      loading.style.width = x+"%";
+      console.log(x);
+    },temps);
+  }
 }
 
 function change(item,indexArray){
@@ -46,25 +49,27 @@ Array.from(array2).forEach(l=>{
       },50);
     });
 
-    setInterval(function(){
-      var loc = location.pathname;
-      var numbIndex;
+    if(bool){
+      setInterval(function(){
+        var loc = location.pathname;
+        var numbIndex;
 
-      switch (loc) {
-        case "/index.html":
-            numbIndex = 1;
-          break;
-        case "/profile.html":
-            numbIndex = 2;
-          break;
-        case "/projects.html":
+        switch (loc) {
+          case "/index.html":
+              numbIndex = 1;
+            break;
+          case "/profile.html":
+              numbIndex = 2;
+            break;
+          case "/projects.html":
+              numbIndex = 0;
+            break;
+          default:
             numbIndex = 0;
-          break;
-        default:
-          numbIndex = 0;
-      }
-      change(l,array[numbIndex]);
-    },temps*1000);
+        }
+        change(l,array[numbIndex]);
+      },temps*1000);
+    }
 
     Array.from(array).forEach(p=>{
       p.addEventListener("click",function(){
