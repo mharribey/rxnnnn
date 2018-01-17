@@ -3,6 +3,19 @@
   transform: translateX(-200px);
 }
 
+.grid{
+  width:1500px;
+  height:90%;
+  position: fixed;
+  background-image: url("../images/grid.png");
+  z-index: 1;
+  background-size: cover;
+  left:0;
+  top:75px;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+}
+
 .about {
   margin-top: 3em;
   width:fit-content;
@@ -58,6 +71,9 @@
     width:80%;
     font-size: 0.7em;
     margin-left: 10px;
+  }
+  .grid {
+    left:-1000px;
   }
 }
 

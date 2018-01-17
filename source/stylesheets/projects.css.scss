@@ -1,7 +1,113 @@
 .projects {
-  width:10vw;
-  height:10vh;
-  background-color: red;
   opacity: 0;
   transform: translateX(-200px);
+  color:white;
+}
+
+.proj-list {
+  align-self: center;
+  margin-left: 8em;
+}
+.active {
+  font-size: 1.3em;
+  color:#30DEB7 !important;
+}
+.proj-list li {
+  color:white;
+  list-style-type: none;
+  font-weight: bold;
+  margin:1em 1em 1em 2em;
+  width: fit-content;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in;
+  -o-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+.proj-list li::before {
+  content:"";
+  position: absolute;
+  background-color: white;
+  height:2px;
+  margin-left: 5em;
+  margin-top: 0.6em;
+  left:8em;
+  width:50px;
+}
+
+.proj-img {
+  background-image: url("../images/rox1.jpg");
+  width: 45vw;
+  height: 40vh;
+  box-shadow: 0 0 40px -8px black;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+  cursor: pointer;
+  filter: contrast(1);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  align-self: center;
+}
+.proj-img:hover {
+  filter:contrast(2);
+}
+
+.projet-container2 {
+  display: flex;
+  justify-content: space-around;
+  width:80%;
+  margin: 3em auto 8em;
+}
+
+.remove {
+  opacity: 0;
+  transform: translateX(2000px);
+  transition-duration: 1s;
+}
+
+.display {
+  opacity: 1;
+  transform: translateX(0);
+  transition-duration: 1s;
+}
+
+.notice {
+  background-color: white;
+  text-align: center;
+  width:100%;
+  color:black;
+  position: absolute;
+  bottom:0;
+}
+.notice p {
+  padding:5px 0;
+  color:black;
+}
+
+@media screen and (max-width:850px) {
+
+    .projet-container2 {
+      flex-direction: column;
+      width:100%;
+      margin:3em 0 8em;
+    }
+    .proj-list {
+      margin:0;
+    }
+    .proj-list li {
+      margin:1em auto;
+      text-align: center;
+    }
+    .proj-list li::before{
+      display: none;
+    }
+    .proj-list ul {
+      padding:0;
+    }
+    .proj-img.display {
+      margin-top: 1em;
+      width:90%;
+    }
 }
