@@ -2,11 +2,19 @@
   opacity: 0;
   transform: translateX(-200px);
   color:white;
+  min-height: 50%;
 }
 
 .proj-list {
   align-self: center;
   margin-left: 8em;
+  z-index: 1;
+
+  li#back {
+    display: none;
+    cursor:pointer;
+    color: #30DEB7;
+  }
 }
 .active {
   font-size: 1.3em;
@@ -37,13 +45,12 @@
 
 .proj-img {
   background-image: url("../images/rox1.jpg");
-  width: 45vw;
-  height: 40vh;
+  width: 40vw;
+  height:40vh;
   box-shadow: 0 0 40px -8px black;
   -webkit-transition: 0.3s ease;
   -o-transition: 0.3s ease;
   transition: 0.3s ease;
-  cursor: pointer;
   filter: contrast(1);
   background-repeat: no-repeat;
   background-position: center;
@@ -51,14 +58,31 @@
   align-self: center;
 }
 .proj-img:hover {
-  filter:contrast(2);
+  filter:contrast(1.2);
+}
+
+.proj-img.second {
+  opacity: 0.3;
+  position: absolute;
+  left:-300px;
+  top:70px;
+  &:hover {
+    filter:contrast(0);
+  }
 }
 
 .projet-container2 {
   display: flex;
   justify-content: space-around;
-  width:80%;
-  margin: 3em auto 8em;
+  width:90%;
+  margin: 6em auto;
+}
+
+.carousel {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  width:44%;
 }
 
 .remove {
@@ -74,16 +98,26 @@
 }
 
 .notice {
-  background-color: white;
-  text-align: center;
-  width:100%;
-  color:black;
+  width:50%;
+  background-color: rgba(255,255,255,0.1);
+  padding:1em;
+  z-index: 999999;
+  font-size: 0.9em;
   position: absolute;
-  bottom:0;
-}
-.notice p {
-  padding:5px 0;
-  color:black;
+  left:-25%;
+  top:-30px;
+  p {
+    text-align: left;
+    cursor: auto;
+    border :0;
+    &:hover {
+      border:0;
+    }
+  }
+  p#btn {
+    cursor:pointer;
+    color: #30DEB7;
+  }
 }
 
 @media screen and (max-width:850px) {
@@ -106,8 +140,20 @@
     .proj-list ul {
       padding:0;
     }
-    .proj-img.display {
-      margin-top: 1em;
+    .photos.display {
+      margin:2em auto;
       width:90%;
+    }
+    .proj-img {
+      margin: 1em auto;
+      width:80%;
+    }
+    .proj-img.second {
+      left:0;
+    }
+    .notice {
+      right:0;
+      left:auto;
+      width:60%;
     }
 }
