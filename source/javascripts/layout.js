@@ -99,7 +99,9 @@ function changeImage(projet, list, number){
     var elt = document.createElement('div');
     elt.className = "carousel-img";
     third.style.backgroundImage = "url(../images/"+projet+"/1.png)";
+    third.innerHTML = projet;
     elt.style.backgroundImage = "url(../images/"+projet+"/"+i+".png)";
+    elt.innerHTML = projet;
     list.append(elt);
   }
 }
