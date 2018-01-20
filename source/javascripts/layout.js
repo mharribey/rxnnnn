@@ -15,13 +15,21 @@ var carousel = document.querySelector('.carousel');
 var photoList = carousel.children[0];
 
 var currentProj;
-var imgs = [];
+
+var numberPhoto = 3; //nombre de photos par projets
 
 Array.from(proj).forEach(projet=>{
   currentProj = "fimmi";
   projContent.innerHTML = changeText(currentProj);
 
   projet.addEventListener("mouseover", function(){
+    currentProj = projet.id;
+
+    while (photoList.hasChildNodes()) {
+      photoList.removeChild(photoList.firstChild);
+    }
+
+    changeImage(currentProj, photoList, numberPhoto);
 
     Array.from(proj).forEach(projet2=>{
       projet2.classList = "proj-name";
@@ -55,16 +63,9 @@ Array.from(proj).forEach(projet=>{
     carousel.style.display = "none";
     back.style.display = "none";
   });
-
-  Array.from(imgs).forEach(i=>{
-    var elt = document.createElement('div');
-    elt.className = "carousel-img";
-    elt.appendChild(elt2);
-  });
 });
 
-
-
+changeImage(currentProj, photoList, numberPhoto);
 
 
 // REMPLISSAGE DU TEXTE POUR CHAQUE PROJETS
@@ -90,6 +91,15 @@ function changeText(projet){
   }
 }
 
-function changeImage(projet){
+// affichage des photos
 
+function changeImage(projet, list, number){
+  for(var i = 0; i < number; i++){
+    var third = document.querySelector('.third');
+    var elt = document.createElement('div');
+    elt.className = "carousel-img";
+    third.style.backgroundImage = "url(../images/"+projet+"/1.png)";
+    elt.style.backgroundImage = "url(../images/"+projet+"/"+i+".png)";
+    list.append(elt);
+  }
 }
