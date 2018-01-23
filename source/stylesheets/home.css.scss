@@ -11,7 +11,7 @@
 
 .header-index, footer, .name {
   font-family: 'Acid' !important;
-  z-index: 9999999;
+  z-index: 99999999;
 }
 
 * {
@@ -83,18 +83,19 @@ a,p {
 }
 
 .footer-index {
-  margin-top:1.3em;
+  margin-top:0.55em;
 }
 .footer-projects {
-  margin-top: 3em;
+  margin-top: -1.7em;
 }
 
 footer {
   width:100vw;
-  margin-top:6em;
+  margin-top:7em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  z-index: 999;
 
   a {
     font-size: 0.7em;
@@ -104,6 +105,7 @@ footer {
     padding:2em 3em;
     display:flex;
     justify-content: space-around;
+    z-index: 2;
   }
   .links {
     width:30%;
@@ -140,7 +142,7 @@ footer {
   position: absolute;
   top:25vh;
   color:white;
-  margin-left:1em;
+  margin-left:0.7em;
   z-index: 9999;
   p {
     font-size: 0.7em;

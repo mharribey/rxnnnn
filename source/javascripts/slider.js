@@ -8,6 +8,9 @@ var projDiv = document.querySelector(".projects");
 var profDiv = document.querySelector(".profile");
 var helloDiv = document.querySelector(".index");
 
+var grid1 = document.querySelector(".grid");
+var grid2 = document.querySelector(".grid");
+
 var array = [profile,projects,index];
 var arrayText = ["profile","projects","index"];
 var array2 = [projDiv, profDiv, helloDiv];

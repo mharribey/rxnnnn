@@ -41,7 +41,7 @@ Array.from(proj).forEach(projet=>{
     photos.classList.add("remove");
     setTimeout(function(){
       currentProj = projet.id;
-      projImg.style.backgroundImage = "url(../images/rox1.jpg)"; //url(../images/"+projet.id+".png)"; Il faut que toutes tes images de projets que tu veux afficher soient en png et nommées comme le nom du projet
+      projImg.style.backgroundImage = "url(../images/rox1.jpg)"; //url(../images/"+projet.id+"/"+0+".png)"; Il faut que toutes tes images de projets que tu veux afficher soient en png et nommées comme le nom du projet
 
       projContent.innerHTML = changeText(currentProj);
 
@@ -69,7 +69,7 @@ changeImage(currentProj, photoList, numberPhoto);
 
 
 // REMPLISSAGE DU TEXTE POUR CHAQUE PROJETS
-
+// ADD CASE WHEN ADD PROJECTS
 function changeText(projet){
   switch (projet) {
     case "fimmi":
@@ -99,9 +99,9 @@ function changeImage(projet, list, number){
     var elt = document.createElement('div');
     elt.className = "carousel-img";
     third.style.backgroundImage = "url(../images/"+projet+"/1.png)";
-    third.innerHTML = projet;
+    third.innerHTML = projet; // remove to remove title on photo
     elt.style.backgroundImage = "url(../images/"+projet+"/"+i+".png)";
-    elt.innerHTML = projet;
+    elt.innerHTML = projet; // remove to remove title on photo
     list.append(elt);
   }
 }
